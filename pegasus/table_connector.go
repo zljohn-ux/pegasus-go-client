@@ -10,16 +10,17 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"gopkg.in/tomb.v1"
 	"math"
 	"sort"
 	"sync"
 	"time"
 
-	"github.com/XiaoMi/pegasus-go-client/idl/base"
-	"github.com/XiaoMi/pegasus-go-client/idl/replication"
-	"github.com/XiaoMi/pegasus-go-client/idl/rrdb"
-	"github.com/XiaoMi/pegasus-go-client/pegalog"
-	"github.com/XiaoMi/pegasus-go-client/session"
+	"github.com/zljohn-ux/pegasus-go-client/idl/base"
+	"github.com/zljohn-ux/pegasus-go-client/idl/replication"
+	"github.com/zljohn-ux/pegasus-go-client/idl/rrdb"
+	"github.com/zljohn-ux/pegasus-go-client/pegalog"
+	"github.com/zljohn-ux/pegasus-go-client/session"
 	"gopkg.in/tomb.v2"
 )
 

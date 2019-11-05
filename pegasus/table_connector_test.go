@@ -14,11 +14,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/XiaoMi/pegasus-go-client/idl/base"
-	"github.com/XiaoMi/pegasus-go-client/idl/replication"
-	"github.com/XiaoMi/pegasus-go-client/rpc"
 	"github.com/fortytw2/leaktest"
 	"github.com/stretchr/testify/assert"
+	"github.com/zljohn-ux/pegasus-go-client/idl/base"
+	"github.com/zljohn-ux/pegasus-go-client/idl/replication"
+	"github.com/zljohn-ux/pegasus-go-client/rpc"
 )
 
 // This is the integration test of the client. Please start the pegasus onebox

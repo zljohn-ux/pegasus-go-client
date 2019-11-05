@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/XiaoMi/pegasus-go-client/idl/base"
-	"github.com/XiaoMi/pegasus-go-client/pegalog"
-	"github.com/XiaoMi/pegasus-go-client/rpc"
-	"github.com/XiaoMi/pegasus-go-client/session"
+	"github.com/zljohn-ux/pegasus-go-client/idl/base"
+	"github.com/zljohn-ux/pegasus-go-client/pegalog"
+	"github.com/zljohn-ux/pegasus-go-client/rpc"
+	"github.com/zljohn-ux/pegasus-go-client/session"
 )
 
 type nodeSession struct {

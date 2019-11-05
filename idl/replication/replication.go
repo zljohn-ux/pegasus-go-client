@@ -7,8 +7,8 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/XiaoMi/pegasus-go-client/idl/base"
 	"github.com/apache/thrift/lib/go/thrift"
+	"github.com/zljohn-ux/pegasus-go-client/idl/base"
 	"reflect"
 )
 

@@ -3,9 +3,9 @@ package pegasus2
 import (
 	"context"
 
-	"github.com/XiaoMi/pegasus-go-client/pegalog"
-	"github.com/XiaoMi/pegasus-go-client/pegasus"
-	"github.com/XiaoMi/pegasus-go-client/session"
+	"github.com/zljohn-ux/pegasus-go-client/pegalog"
+	"github.com/zljohn-ux/pegasus-go-client/pegasus"
+	"github.com/zljohn-ux/pegasus-go-client/session"
 )
 
 type Client struct {

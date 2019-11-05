@@ -13,14 +13,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/XiaoMi/pegasus-go-client/idl/base"
-	"github.com/XiaoMi/pegasus-go-client/idl/replication"
-	"github.com/XiaoMi/pegasus-go-client/idl/rrdb"
-	"github.com/XiaoMi/pegasus-go-client/pegalog"
-	"github.com/XiaoMi/pegasus-go-client/rpc"
 	"github.com/apache/thrift/lib/go/thrift"
 	"github.com/fortytw2/leaktest"
 	"github.com/stretchr/testify/assert"
+	"github.com/zljohn-ux/pegasus-go-client/idl/base"
+	"github.com/zljohn-ux/pegasus-go-client/idl/replication"
+	"github.com/zljohn-ux/pegasus-go-client/idl/rrdb"
+	"github.com/zljohn-ux/pegasus-go-client/pegalog"
+	"github.com/zljohn-ux/pegasus-go-client/rpc"
 )
 
 func newFakeNodeSession(reader io.Reader, writer io.Writer) *nodeSession {

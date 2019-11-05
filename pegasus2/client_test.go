@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/XiaoMi/pegasus-go-client/pegasus"
 	"github.com/fortytw2/leaktest"
 	"github.com/stretchr/testify/assert"
+	"github.com/zljohn-ux/pegasus-go-client/pegasus"
 )
 
 func TestClient_Get(t *testing.T) {
