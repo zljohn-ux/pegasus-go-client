@@ -10,7 +10,6 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"gopkg.in/tomb.v1"
 	"math"
 	"sort"
 	"sync"
