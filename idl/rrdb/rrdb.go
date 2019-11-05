@@ -5762,7 +5762,7 @@ func (p *RrdbProcessor) Process(ctx context.Context, iprot, oprot thrift.TProtoc
 	oprot.WriteMessageBegin(name, thrift.EXCEPTION, seqId)
 	x31.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush()
+	oprot.Flush(ctx)
 	return false, x31
 
 }
@@ -5779,7 +5779,7 @@ func (p *rrdbProcessorPut) Process(ctx context.Context, seqId int32, iprot, opro
 		oprot.WriteMessageBegin("put", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -5792,7 +5792,7 @@ func (p *rrdbProcessorPut) Process(ctx context.Context, seqId int32, iprot, opro
 		oprot.WriteMessageBegin("put", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -5806,7 +5806,7 @@ func (p *rrdbProcessorPut) Process(ctx context.Context, seqId int32, iprot, opro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5827,7 +5827,7 @@ func (p *rrdbProcessorMultiPut) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("multi_put", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -5840,7 +5840,7 @@ func (p *rrdbProcessorMultiPut) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("multi_put", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -5854,7 +5854,7 @@ func (p *rrdbProcessorMultiPut) Process(ctx context.Context, seqId int32, iprot,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5875,7 +5875,7 @@ func (p *rrdbProcessorRemove) Process(ctx context.Context, seqId int32, iprot, o
 		oprot.WriteMessageBegin("remove", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -5888,7 +5888,7 @@ func (p *rrdbProcessorRemove) Process(ctx context.Context, seqId int32, iprot, o
 		oprot.WriteMessageBegin("remove", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -5902,7 +5902,7 @@ func (p *rrdbProcessorRemove) Process(ctx context.Context, seqId int32, iprot, o
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5923,7 +5923,7 @@ func (p *rrdbProcessorMultiRemove) Process(ctx context.Context, seqId int32, ipr
 		oprot.WriteMessageBegin("multi_remove", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -5936,7 +5936,7 @@ func (p *rrdbProcessorMultiRemove) Process(ctx context.Context, seqId int32, ipr
 		oprot.WriteMessageBegin("multi_remove", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -5950,7 +5950,7 @@ func (p *rrdbProcessorMultiRemove) Process(ctx context.Context, seqId int32, ipr
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5971,7 +5971,7 @@ func (p *rrdbProcessorIncr) Process(ctx context.Context, seqId int32, iprot, opr
 		oprot.WriteMessageBegin("incr", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -5984,7 +5984,7 @@ func (p *rrdbProcessorIncr) Process(ctx context.Context, seqId int32, iprot, opr
 		oprot.WriteMessageBegin("incr", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -5998,7 +5998,7 @@ func (p *rrdbProcessorIncr) Process(ctx context.Context, seqId int32, iprot, opr
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6019,7 +6019,7 @@ func (p *rrdbProcessorCheckAndSet) Process(ctx context.Context, seqId int32, ipr
 		oprot.WriteMessageBegin("check_and_set", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -6032,7 +6032,7 @@ func (p *rrdbProcessorCheckAndSet) Process(ctx context.Context, seqId int32, ipr
 		oprot.WriteMessageBegin("check_and_set", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -6046,7 +6046,7 @@ func (p *rrdbProcessorCheckAndSet) Process(ctx context.Context, seqId int32, ipr
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6067,7 +6067,7 @@ func (p *rrdbProcessorGet) Process(ctx context.Context, seqId int32, iprot, opro
 		oprot.WriteMessageBegin("get", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -6080,7 +6080,7 @@ func (p *rrdbProcessorGet) Process(ctx context.Context, seqId int32, iprot, opro
 		oprot.WriteMessageBegin("get", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -6094,7 +6094,7 @@ func (p *rrdbProcessorGet) Process(ctx context.Context, seqId int32, iprot, opro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6115,7 +6115,7 @@ func (p *rrdbProcessorMultiGet) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("multi_get", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -6128,7 +6128,7 @@ func (p *rrdbProcessorMultiGet) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("multi_get", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -6142,7 +6142,7 @@ func (p *rrdbProcessorMultiGet) Process(ctx context.Context, seqId int32, iprot,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6163,7 +6163,7 @@ func (p *rrdbProcessorSortkeyCount) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("sortkey_count", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -6176,7 +6176,7 @@ func (p *rrdbProcessorSortkeyCount) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("sortkey_count", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -6190,7 +6190,7 @@ func (p *rrdbProcessorSortkeyCount) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6211,7 +6211,7 @@ func (p *rrdbProcessorTTL) Process(ctx context.Context, seqId int32, iprot, opro
 		oprot.WriteMessageBegin("ttl", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -6224,7 +6224,7 @@ func (p *rrdbProcessorTTL) Process(ctx context.Context, seqId int32, iprot, opro
 		oprot.WriteMessageBegin("ttl", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -6238,7 +6238,7 @@ func (p *rrdbProcessorTTL) Process(ctx context.Context, seqId int32, iprot, opro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6259,7 +6259,7 @@ func (p *rrdbProcessorGetScanner) Process(ctx context.Context, seqId int32, ipro
 		oprot.WriteMessageBegin("get_scanner", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -6272,7 +6272,7 @@ func (p *rrdbProcessorGetScanner) Process(ctx context.Context, seqId int32, ipro
 		oprot.WriteMessageBegin("get_scanner", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -6286,7 +6286,7 @@ func (p *rrdbProcessorGetScanner) Process(ctx context.Context, seqId int32, ipro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
