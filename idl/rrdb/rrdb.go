@@ -6307,7 +6307,7 @@ func (p *rrdbProcessorScan) Process(ctx context.Context, seqId int32, iprot, opr
 		oprot.WriteMessageBegin("scan", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -6320,7 +6320,7 @@ func (p *rrdbProcessorScan) Process(ctx context.Context, seqId int32, iprot, opr
 		oprot.WriteMessageBegin("scan", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -6334,7 +6334,7 @@ func (p *rrdbProcessorScan) Process(ctx context.Context, seqId int32, iprot, opr
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -9136,7 +9136,7 @@ func (p *MetaProcessor) Process(ctx context.Context, iprot, oprot thrift.TProtoc
 	oprot.WriteMessageBegin(name, thrift.EXCEPTION, seqId)
 	x108.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush()
+	oprot.Flush(ctx)
 	return false, x108
 
 }
@@ -9153,7 +9153,7 @@ func (p *metaProcessorQueryCfg) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("query_cfg", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return false, err
 	}
 
@@ -9166,7 +9166,7 @@ func (p *metaProcessorQueryCfg) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("query_cfg", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		oprot.Flush(ctx)
 		return true, err2
 	} else {
 		result.Success = retval
@@ -9180,7 +9180,7 @@ func (p *metaProcessorQueryCfg) Process(ctx context.Context, seqId int32, iprot,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(); err == nil && err2 != nil {
+	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
